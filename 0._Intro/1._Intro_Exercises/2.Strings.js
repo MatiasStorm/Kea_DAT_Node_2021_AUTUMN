@@ -5,7 +5,11 @@ const numberOne = "1.10";
 const numberTwo = "2.30";
 
 // add those two numbers and show the result
-// you cannot touch line 1 neither line 2
+// you cannot touch line 1 nor line 2
+
+const sum1 = parseFloat(numberOne) + parseFloat(numberTwo);
+
+console.log(sum1);
 
 
 // --------------------------------------
@@ -17,6 +21,9 @@ const numberTwo = "2.30";
 const anotherNumberOne = "1.10";
 const anotherNumberTwo = "2.30";
 
+const sum2 = (parseFloat(anotherNumberOne) + parseFloat(numberTwo) ).toFixed(2);
+
+console.log(sum2);
 
 
 // --------------------------------------
