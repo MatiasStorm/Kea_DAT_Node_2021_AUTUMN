@@ -19,7 +19,7 @@ console.log('"Simon"');
 console.log("Thomas'");
 console.log(`"R'a"s"m'u"s`);
 
-// type inference
+// type coercion
 
 // --------------------------------------
 // Exercise 2 - Numbers and Strings
