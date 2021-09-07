@@ -7,6 +7,9 @@
 // NEVER do this
 // insaneVariable = "This is not good";
 
+console.log(word);
+var word = "Clippie wants to help youuuuuuuuuu~";
+
 let age = 27;
 
 const person = {
