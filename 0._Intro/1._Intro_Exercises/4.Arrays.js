@@ -60,8 +60,8 @@ console.log("\n5.", diet);
 // Exercise 6 - Copy array
 
 // You really like your daily diet from last exercise. Copy it to a new array called dinnerTray so you can give it to a friend.  
-const newDiet = [...diet];
-console.log("6. Copied diet:", diet);
+const dinnerTray = [...diet];
+console.log("6. Copied diet:", dinnerTray);
 
 
 // --------------------------------------
@@ -87,7 +87,7 @@ const discardedNumbers = [];
 // else push them to the array discardedNumbers
 console.log("\n8.");
 numbers.forEach(n => {
-    if(n > 6 || n < 0){
+    if(n > 6 || n < 0) {
         console.log(n);
     }
     else {
