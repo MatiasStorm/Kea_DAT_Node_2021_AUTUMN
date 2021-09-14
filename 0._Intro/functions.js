@@ -25,7 +25,7 @@ function interact(anyFunctionReference) {
     anyFunctionReference();
 }
 
-interact(anonymousFunctionGreeting);
+// interact(anonymousFunctionGreeting);
 
 
 /* interact(function () {
@@ -33,5 +33,24 @@ interact(anonymousFunctionGreeting);
 }); */
 
 // interact(() => console.log("Kick"));
+
+function interactWithSomeone(anyFunctionReference, name) {
+    anyFunctionReference(name);
+}
+
+const callBackLater = (name) => console.log(`Hi, ${name}. I'm ready to help you.`);
+
+// interactWithSomeone(callBackLater, "Rune");
+// interactWithSomeone(callBackLater, "Bob");
+
+// task create a "helpWithHomeworkLater" function that helps a person later
+const helpWithHomeworkLater = (name) => console.log(`Hi there, ${name}. The answer to that assignment is 42.`);
+
+interactWithSomeone(helpWithHomeworkLater, "Rasmus");
+
+interactWithSomeone( 
+    (innerFunction) => innerFunction(),
+    () => console.log("Inner function")
+);
 
 
