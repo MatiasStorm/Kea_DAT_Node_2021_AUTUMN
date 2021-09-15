@@ -12,120 +12,82 @@
 <table>
     <tr>
         <th>
-            
             Method
-            
         </th>
         <th>
-            
             Endpoint
-            
         </th>
         <th>
-            
             Example Request
-            
         </th>
         <th>
-            
             Example Response
-            
         </th>
         <th>
-            
             Description
-            
         </th>
     </tr>
     <tr>
         <td>
-            
             GET
-            
         </td>
         <td>
-            
             /memes
-            
         </td>
         <td>
-            
             None
-            
         </td>
         <td>
-            <pre>
-                
+            
+            ```json
                 [
                     {"id": 1, "title": "Dank meme1", url: "https://url.com" },
                     {"id": 2, "title": "Dank meme2", url: "https://url.com"}
                 ] 
-                
-            </pre>
+            ```
+            
         </td>
         <td>
-            
             Returns a list of all memes
-            
         </td>
     <tr>
         <td>
-            
             GET
-            
         </td>
         <td>
-            
             /memes/{id}
-            
         </td>
         <td>
-            
             None
-            
         </td>
         <td>
-            <pre>
-                
+            ```json
                 {"id": 1, "title": "Dank meme1", url: "https://url.com"}       
-                
-            </pre>
+            ```
         </td>
         <td>
-            
             Returns the meme with the given id else 404       
-            
         </td>
     </tr>
     <tr>
         <td>
-            
             POST
-            
         </td>
         <td>
-            
             /memes
-            
         </td>
         <td>
-            <pre>
-                
-                json {"title": "New Meme", url: ""}
-                
-            </pre>
+            ```json
+                {"title": "New Meme", url: ""}
+            ```
         </td>
         <td>
-            <pre>
-                
+            ```json
                 {"id": 3, "title": "New Meme", url: ""}
-                
-            </pre>
+            ```
         </td>
         <td>
-            
             Creates a new meme with auto incremented id   
-            
         </td>
     </tr>
     <tr>
