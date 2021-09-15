@@ -6,8 +6,16 @@
 ### Example Response
 ```json
     [
-        {"id": 1, "title": "Dank meme1", url: "https://url.com" },
-        {"id": 2, "title": "Dank meme2", url: "https://url.com"}
+        {
+            "id": 1,
+            "title": "Dank meme1",
+            "url": "https://url.com" 
+        },
+        {
+            "id": 2,
+            "title": "Dank meme2",
+            "url": "https://url.com"
+        }
     ] 
 ```
 
@@ -21,7 +29,11 @@ Returns a list of all memes
 
 ### Example Response
 ```json
-    {"id": 1, "title": "Dank meme1", url: "https://url.com"}       
+    {
+        "id": 1,
+        "title": "Dank meme1",
+        "url": "https://url.com"
+    }       
 ```
 
 ### Description
@@ -33,12 +45,19 @@ Returns the meme with the given id else 404
 
 ### Example Request
 ```json
-    {"title": "New Meme", url: ""}
+    {
+        "title": "New Meme",
+        "url": ""
+    }
 ```
 
 ### Example Response
 ```json
-    {"id": 3, "title": "New Meme", url: ""}
+    {
+        "id": 3,
+        "title": "New Meme",
+        "url": ""
+    }
 ```
 
 ### Description
@@ -50,12 +69,19 @@ Creates a new meme with auto incremented id
 ### Example Request
 Url: `/memes/1`
 ```json 
-    {title": "Dank meme1 updated", url: "https://url.com"} 
+    {
+        "title": "Dank meme1 updated",
+        "url": "https://url.com"
+    } 
 ```
 
 ### Example Response
 ```json 
-    {"id": 1, "title": "Dank meme1 updated", url: "https://url.com"} 
+    {
+        "id": 1,
+        "title": "Dank meme1 updated",
+        "url": "https://url.com"
+    } 
 ```
 
 ### Description
@@ -66,12 +92,18 @@ Updates the meme with the given id
 
 ### Example Request
 ```json 
-    {title": "Changed Title"} 
+    {
+        "title": "Changed Title"
+    } 
 ```
 
 ### Example Response
 ```json 
-    {"id": 1, "title": "Changed Title", url: "https://url.com"} 
+    {
+        "id": 1, 
+        "title": "Changed Title",
+        "url": "https://url.com"
+    } 
 ```
 
 ### Description
