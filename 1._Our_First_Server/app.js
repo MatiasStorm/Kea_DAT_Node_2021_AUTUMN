@@ -36,34 +36,6 @@ app.get("/favoritenumber/:favoriteNumber", (req, res) => {
     });
 });
 
-app.get("/weekday", (req, res) => {
-    const date = new Date();
-    let day;
-    switch (date.getDay()){
-        case 0:
-            day = "Søndag";
-            break;
-        case 1:
-            day = "Mandag";
-            break;
-        case 2:
-            day = "Tirsdag";
-            break;
-        case 3:
-            day = "Onsdag";
-            break;
-        case 4:
-            day = "Torsdag";
-            break;
-        case 5:
-            day = "Fredag";
-            break;
-        case 6:
-            day = "Lørdag";
-            break;
-    }
-    res.send(day);
-})
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
