@@ -1,150 +1,86 @@
 # Dank Memes API
 
-| Method |  Endpoint   |                           Example Request                            | Example Response                                                                                                                  | Description                                 |
-|--------|:-----------:|:--------------------------------------------------------------------:|-----------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|
-| GET    |   /memes    |                                 None                                 | ```json  [{"id": 1, "title": "Dank meme1", url: "https://url.com"}, {"id": 2, "title": "Dank meme2", url: "https://url.com"}] ``` | Returns a list of all memes                 |
-| GET    | /memes/{id} |                                 None                                 | ```json   ```                                                             |  |
-| POST   |   /memes    |              `json {"title": "New Meme", url: ""}`               | ```json ```                                                                                |  |
-| PUT    | /memes/{id} | ```json {"id": 1, "title": "Dank meme1", url: "https://url.com"} ``` |                                                                                                                                   | Updates the meme with the given id          |
-| PATCH  | /memes/{id} |                                                                      |                                                                                                                                   | Updates part of the meme with the given id  |
-| DELETE | /memes/{id} |                                 None                                 |                                                                                                                                   | Deletes the meme with the given id          |
+## GET (all)
+**Endpoint:** `/memes`
 
-<table>
-    <tr>
-        <th>
-            Method
-        </th>
-        <th>
-            Endpoint
-        </th>
-        <th>
-            Example Request
-        </th>
-        <th>
-            Example Response
-        </th>
-        <th>
-            Description
-        </th>
-    </tr>
-    <tr>
-        <td>
-            GET
-        </td>
-        <td>
-            /memes
-        </td>
-        <td>
-            None
-        </td>
-        <td>
-            
-            ```json
-                [
-                    {"id": 1, "title": "Dank meme1", url: "https://url.com" },
-                    {"id": 2, "title": "Dank meme2", url: "https://url.com"}
-                ] 
-            ```
-            
-        </td>
-        <td>
-            Returns a list of all memes
-        </td>
-    <tr>
-        <td>
-            GET
-        </td>
-        <td>
-            /memes/{id}
-        </td>
-        <td>
-            None
-        </td>
-        <td>
-            ```json
-                {"id": 1, "title": "Dank meme1", url: "https://url.com"}       
-            ```
-        </td>
-        <td>
-            Returns the meme with the given id else 404       
-        </td>
-    </tr>
-    <tr>
-        <td>
-            POST
-        </td>
-        <td>
-            /memes
-        </td>
-        <td>
-            ```json
-                {"title": "New Meme", url: ""}
-            ```
-        </td>
-        <td>
-            ```json
-                {"id": 3, "title": "New Meme", url: ""}
-            ```
-        </td>
-        <td>
-            Creates a new meme with auto incremented id   
-        </td>
-    </tr>
-    <tr>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-    </tr>
-    <tr>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-    </tr>
-    <tr>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-        <td>
-            
-        </td>
-    </tr>
-    </tr>
-</table>
+### Example Response
+```json
+    [
+        {"id": 1, "title": "Dank meme1", url: "https://url.com" },
+        {"id": 2, "title": "Dank meme2", url: "https://url.com"}
+    ] 
+```
+
+### Description
+Returns a list of all memes
 
 
+## GET (one)
+**Endpoint:** `/memes/{id}`
 
+
+### Example Response
+```json
+    {"id": 1, "title": "Dank meme1", url: "https://url.com"}       
+```
+
+### Description
+Returns the meme with the given id else 404       
+
+
+## POST
+**Endpoint:** `/memes`
+
+### Example Request
+```json
+    {"title": "New Meme", url: ""}
+```
+
+### Example Response
+```json
+    {"id": 3, "title": "New Meme", url: ""}
+```
+
+### Description
+Creates a new meme with auto incremented id   
+
+## PUT
+**Endpoint:** `/memes/{id}`
+
+### Example Request
+Url: `/memes/1`
+```json 
+    {title": "Dank meme1 updated", url: "https://url.com"} 
+```
+
+### Example Response
+```json 
+    {"id": 1, "title": "Dank meme1 updated", url: "https://url.com"} 
+```
+
+### Description
+Updates the meme with the given id
+
+## PATCH
+**Endpoint:** `/memes`
+
+### Example Request
+```json 
+    {title": "Changed Title"} 
+```
+
+### Example Response
+```json 
+    {"id": 1, "title": "Changed Title", url: "https://url.com"} 
+```
+
+### Description
+Updates part the meme with the given id
+
+## DELETE
+**Endpoint:** `/memes`
+
+### Description
+Deletes the meme with the given id
 
 
