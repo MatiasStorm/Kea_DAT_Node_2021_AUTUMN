@@ -3,6 +3,8 @@
 ## GET (all)
 **Endpoint:** `/memes`
 
+Returns a list of all memes
+
 ### Example Response
 ```json
     [
@@ -19,13 +21,10 @@
     ] 
 ```
 
-### Description
-Returns a list of all memes
-
-
 ## GET (one)
 **Endpoint:** `/memes/{id}`
 
+Returns the meme with the given id else 404       
 
 ### Example Response
 ```json
@@ -36,12 +35,11 @@ Returns a list of all memes
     }       
 ```
 
-### Description
-Returns the meme with the given id else 404       
-
 
 ## POST
 **Endpoint:** `/memes`
+
+Creates a new meme with auto incremented id   
 
 ### Example Request
 ```json
@@ -60,11 +58,11 @@ Returns the meme with the given id else 404
     }
 ```
 
-### Description
-Creates a new meme with auto incremented id   
 
 ## PUT
 **Endpoint:** `/memes/{id}`
+
+Updates the meme with the given id
 
 ### Example Request
 Url: `/memes/1`
@@ -84,11 +82,11 @@ Url: `/memes/1`
     } 
 ```
 
-### Description
-Updates the meme with the given id
 
 ## PATCH
 **Endpoint:** `/memes`
+
+Updates part the meme with the given id
 
 ### Example Request
 ```json 
@@ -106,13 +104,9 @@ Updates the meme with the given id
     } 
 ```
 
-### Description
-Updates part the meme with the given id
 
 ## DELETE
-**Endpoint:** `/memes`
+**Endpoint:** `/memes/{id}`
 
-### Description
 Deletes the meme with the given id
-
 
