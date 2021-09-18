@@ -39,7 +39,7 @@ Returns the meme with the given id else 404
 ## POST
 **Endpoint:** `/memes`
 
-Creates a new meme with auto incremented id   
+Creates a new meme with auto incremented id.
 
 ### Example Request
 ```json
@@ -62,7 +62,7 @@ Creates a new meme with auto incremented id
 ## PUT
 **Endpoint:** `/memes/{id}`
 
-Updates the meme with the given id
+Updates the meme with the given id.
 
 ### Example Request
 Url: `/memes/1`
@@ -86,7 +86,7 @@ Url: `/memes/1`
 ## PATCH
 **Endpoint:** `/memes`
 
-Updates part the meme with the given id
+Updates part of the meme with the given id.
 
 ### Example Request
 ```json 
@@ -108,5 +108,5 @@ Updates part the meme with the given id
 ## DELETE
 **Endpoint:** `/memes/{id}`
 
-Deletes the meme with the given id
+Deletes the meme with the given id.
 

@@ -1,19 +1,22 @@
 {
-    "memes":[
-        {
-            "id": 1,
-            "url": "",
-            "ranking": 5.2
-        },
-        {
-            "id": 2,
-            "url": "",
-            "ranking": 9.8
-        },
-        {
-            "id": 3,
-            "url": "",
-            "ranking": 3.5
-        }
-    ]
+    "memes": {
+        "idCount": 4,
+        "rows": [
+            {
+                "id": 1,
+                "url": "https://memes.com/m/3KELv6gQRxX",
+                "ranking": 5.2
+            },
+            {
+                "id": 2,
+                "url": "https://memes.com/m/n04pqAx1W-Q",
+                "ranking": 9.8
+            },
+            {
+                "id": 3,
+                "url": "https://memes.com/m/VzROYgkdRyx",
+                "ranking": 3.5
+            }
+        ]
+    }
 }
