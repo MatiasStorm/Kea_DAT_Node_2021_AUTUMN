@@ -1,10 +1,11 @@
-// const express = require("express");
-// const app = express();
-const app = require("express")();
-const port = 3000;
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+// const app = require("express")();
 
 const cake = require("./cake.json");
-console.log(cake);
+// console.log(cake);
 
 app.get("/", (req, res) => {
     res.send({ mindIsBlown: true });
@@ -45,6 +46,10 @@ app.get("/favoritenumber/:favoriteNumber", (req, res) => {
     });
 });
 
+app.post("/messages", (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
 
 app.listen(port, () => {
     console.log(`App listening at http://localhost:${port}`);
