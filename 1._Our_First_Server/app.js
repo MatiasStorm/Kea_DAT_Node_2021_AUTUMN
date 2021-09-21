@@ -3,6 +3,9 @@
 const app = require("express")();
 const port = 3000;
 
+const cake = require("./cake.json");
+console.log(cake);
+
 app.get("/", (req, res) => {
     res.send({ mindIsBlown: true });
 });
@@ -12,6 +15,12 @@ app.get("/", (req, res) => {
 app.get("/adventureTime", (req, res) => {
     res.send({ adventure: "Time" });
 });
+
+// create a route on /frontpage that sends back a welcome message
+app.get("/frontpage", (req, res) => {
+    res.send("<h1 class='fullstack-node.js'>Welcome to the front page. Everything but this route is a pure data API</h1>");
+});
+
 
 // path variable (with Spring syntax below)
 // /endpoint/{someValue}
