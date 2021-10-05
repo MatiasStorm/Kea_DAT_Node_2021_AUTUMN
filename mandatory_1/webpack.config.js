@@ -5,7 +5,7 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        'build/bundle': ['./src/main.js']
+        'build/bundle': ['./client/main.js']
     },
     output: {
         path: path.resolve(__dirname, "public/"),
@@ -44,6 +44,10 @@ module.exports = {
     mode,
 	devtool: prod ? false : 'source-map',
 	devServer: {
-		hot: true
+		hot: true,
+        devMiddleware: {
+            publicPath: "/public",
+            writeToDisk: true
+        }
 	}
 };
