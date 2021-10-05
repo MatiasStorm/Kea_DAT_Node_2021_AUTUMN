@@ -3,32 +3,41 @@ const express = require('express');
 const dbHandler =  require('./db-handler');
 
 
+async function main(){
+    const app = express();
+    const port = 3000;
 
-const app = express();
-const port = 3000;
+    const dbName = "nodejs";
+    const client = await dbHandler.connect(dbName);
+    const db = client.db(dbName);
+    const collection = db.collection("pages");
 
+    initializeApiEndpoints(app, collection);
+
+    startServer(app, port);
+}
 
 // API endpoints
-
-async function dbTest() {
-    const client = await dbHandler.connect();
-    console.log(client);
-    const db = client.db("test");
-    const collection = db.collection("documents");
-    const insertResult = await collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }]);
-    console.log('Inserted documents =>', insertResult);
+function initializeApiEndpoints(app, collection){
+    app.get("/api", (req, res) => {
+        collection.find().toArray()
+            .then(results => {
+                res.json(results);
+            })
+    });
 }
 
 
-
 // Compiled frontend (Has to be last)
-app.use(express.static('public'));
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/build/bundle.js"));
-})
+function startServer(app, port){
+    app.use(express.static('public'));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname + "/public/build/bundle.js"));
+    })
 
-app.listen(port, () => {
-    console.log("Website hosted at http://localhost:3000");
-})
+    app.listen(port, () => {
+        console.log("Website hosted at http://localhost:3000");
+    })
+}
 
-dbTest();
+main();

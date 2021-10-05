@@ -1,4 +1,5 @@
 const path = require("path");
+const sveltePreprocess = require('svelte-preprocess');
 
 const mode = process.env.NODE_ENV || 'development';
 const prod = mode === 'production';
@@ -23,22 +24,30 @@ module.exports = {
         rules: [
             {
                 test: /\.svelte$/,
-                use: {
+                use:  { 
                     loader: 'svelte-loader',
                     options: {
+                        preprocess: sveltePreprocess({
+                            postcss: {
+                                plugins: [
+                                    require( "tailwindcss" ),
+                                    require( "autoprefixer" )
+                                ]
+                            }
+                        }),
                         compileOptions: {
                             dev: !prod
                         },
-                        hotReload: !prod
+                        hotReload: !prod 
                     }
-                }
+                },
             },
             {
                 test: /node_modules\/svelte\/.*\.mjs$/,
                 resolve: {
                   fullySpecified: false
                 }
-            }
+            },
         ]
     },
     mode,
