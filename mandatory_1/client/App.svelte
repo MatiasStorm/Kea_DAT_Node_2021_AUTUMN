@@ -1,9 +1,9 @@
 <script>
-    import Home from "./Home.svelte";
+    import FrontPage from "./FrontPage.svelte";
 </script>
 
 <main>
-    <Home></Home>
+    <FrontPage></FrontPage>
 </main>
 
 <style global lang="postcss">

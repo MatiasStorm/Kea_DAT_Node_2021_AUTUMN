@@ -1,6 +1,6 @@
-# build folders
+# build files
 build/
-
+build_bundle*
 
 # Logs
 logs
