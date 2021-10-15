@@ -10,9 +10,16 @@ module.exports.connect = async (dbName) => {
     const client = new MongoClient(uri);
     await client.connect();
 
+    
     const db = client.db(dbName);
-    const collection = db.collection("pages");
-    await collection.insertMany(JSON.parse( fs.readFileSync("server/database.json") ));
+    const data = JSON.parse( fs.readFileSync("server/database.json") );
+
+    Object.entries(data).forEach(( [collectionName, collections ] ) => {
+        const collection = db.collection(collectionName);
+        collection.insertMany(collections);
+    })
+
+    // await collection.insertMany(JSON.parse( fs.readFileSync("server/database.json") ));
     
     console.log(`Connected to mongodb on ${uri}`);
 

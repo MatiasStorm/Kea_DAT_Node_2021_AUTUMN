@@ -10,16 +10,16 @@ async function main(){
     const dbName = "nodejs";
     const client = await dbHandler.connect(dbName);
     const db = client.db(dbName);
-    const collection = db.collection("pages");
 
-    initializeApiEndpoints(app, collection);
+    initializeApiEndpoints(app, db);
 
     startServer(app, port);
 }
 
 // API endpoints
-function initializeApiEndpoints(app, collection){
-    app.get("/api", (req, res) => {
+function initializeApiEndpoints(app, db){
+    app.get("/api/pages", (req, res) => {
+        const collection = db.collection("pages");
         collection.find().toArray()
             .then(results => {
                 res.json(results);

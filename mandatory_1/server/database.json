@@ -1,29 +1,66 @@
-[
-    {
-        "name": "nodejs",
-        "sections": [
-            {
-                "title": "title",
-                "text": "some text"
-            }
-        ]
-    },
-    {
-        "name": "npm",
-        "sections": [
-            {
-                "title": "Node package manager",
-                "text": "some text"
-            }
-        ]
-    },
-    {
-        "name": "Express",
-        "sections": [
-            {
-                "title": "Express",
-                "text": "some text"
-            }
-        ]
-    }
-]
+{
+    "pages": [ 
+        {
+            "title": "Javascript",
+            "sections": [
+                {
+                    "title": "Variables",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "value": "There are 3 ways to declare a JavaScript variable:"
+                        },
+                        {
+                            "type": "list",
+                            "value": [
+                                "Using var",
+                                "Using let",
+                                "Using const"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Objects"
+                },
+                {
+                    "title": "Arrays"
+                },
+                {
+                    "title": "Function"
+                },
+                {
+                    "title": "Loops"
+                }
+            ]
+        },
+        {
+            "title": "nodejs",
+            "sections": [
+                {
+                    "title": "Node JS",
+                    "text": "some text"
+                }
+            ]
+        },
+        {
+            "title": "npm",
+            "sections": [
+                {
+                    "title": "Node package manager",
+                    "text": "some text"
+                }
+            ]
+        },
+        {
+            "title": "Express",
+            "sections": [
+                {
+                    "title": "Express",
+                    "text": "some text"
+                }
+            ]
+        }
+    ]
+}
+

@@ -25,6 +25,7 @@
         "build": "cross-env NODE_ENV=production webpack",
         "start": "node server/app.js",
         "dev-client": "webpack serve",
-        "dev-server": "nodemon"
+        "dev-server": "nodemon",
+        "clean": "rm -r public/build/ && rm public/build_bundle*"
     }
 }
