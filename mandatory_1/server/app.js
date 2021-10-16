@@ -16,9 +16,16 @@ async function main(){
     startServer(app, port);
 }
 
+function setCommonResponseHeaders(res){
+    res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+    return res;
+}
+
 // API endpoints
 function initializeApiEndpoints(app, db){
     app.get("/api/pages", (req, res) => {
+        res = setCommonResponseHeaders(res);
+
         const collection = db.collection("pages");
         collection.find().toArray()
             .then(results => {

@@ -1,12 +1,13 @@
 <script>
     import SideBar from './SideBar.svelte';
-    import DocumentationView from "./DocumentationView.svelte";
+    import DocumentationView from "./DocumentationView/DocumentationView.svelte";
+    let serverUrl = "http://localhost:3000/api";
     let documentationPages = [];
     let titles = [];
     let activeTitle;
     let sections = [];
 
-    fetch("/api/pages")
+    fetch(`${serverUrl}/pages`)
         .then(res => res.json())
         .then(res => {
             documentationPages = res;

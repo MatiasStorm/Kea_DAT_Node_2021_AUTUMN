@@ -55,8 +55,8 @@ module.exports = {
 	devServer: {
 		hot: true,
         devMiddleware: {
-            publicPath: "/public",
-            writeToDisk: true
+            // publicPath: "/public",
+            // writeToDisk: true
         }
 	}
 };

@@ -8,38 +8,207 @@
                     "parts": [
                         {
                             "type": "text",
-                            "value": "There are 3 ways to declare a JavaScript variable:"
+                            "values": [ 
+                                "There are 3 ways to declare a JavaScript variable:" 
+                            ]
                         },
                         {
                             "type": "list",
-                            "value": [
+                            "values": [
                                 "Using var",
                                 "Using let",
                                 "Using const"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [ 
+                                "Example of how to declare variables:" 
+                            ]
+                        }, 
+                        {
+                            "type": "code",
+                            "values": [
+                                "let a = 2;",
+                                "const b = 4;",
+                                "var c = 5;"
                             ]
                         }
                     ]
                 },
                 {
-                    "title": "Objects"
+                    "title": "Data Types",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [ "Primitive types:" ]
+                        },
+                        {
+                            "type": "list",
+                            "values": [ 
+                                "Number",
+                                "String",
+                                "Boolean",
+                                "null",
+                                "undefined"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [ "Refrence types:" ]
+                        },
+                        {
+                            "type": "list",
+                            "values": [ 
+                                "Objects",
+                                "Array",
+                                "Function",
+                                "Date",
+                                "RegExp",
+                                "Error"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "Arrays"
+                    "title": "Objects",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "Objects can contain many values in name:value paris",
+                                "This is how you define an object in Javascript:"
+                            ]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "const car = {",
+                                "   type: 'fiat', ",
+                                "   model: '500', ",
+                                "   color: 'white' ",
+                                "};"
+                            ]
+                        }
+                    ]
                 },
                 {
-                    "title": "Function"
+                    "title": "Arrays",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "The JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, list-like objects."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": ["Create an Array:"]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "let fruits = ['Apple', 'Banana'];",
+                                "",
+                                "console.log(fruits.length);",
+                                "// 2"
+                            ]
+                        }
+                    ]
+
                 },
                 {
-                    "title": "Loops"
+                    "title": "Functions",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "A JavaScript function is a block of code designed to perform a particular task.",
+                                "A JavaScript function is executed when \"something\" invokes it (calls it)."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "How to create a function:"
+                            ]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "function myFunction(p1, p2) {",
+                                "   return p1 * p2;   // The function returns the product of p1 and p2",
+                                "}",
+                                "",
+                                "myFunction(1, 2) // Invoking the method"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Loops",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "Loops are handy, if you want to run the same code over and over again, each time with a different value."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "For loop:"
+                            ]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "for (statement 1; statement 2; statement 3) {",
+                                "   // code block to be executed",
+                                "}"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "While loop:"
+                            ]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "while (condition) {",
+                                "   // code block to be executed",
+                                "}"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
         {
-            "title": "nodejs",
+            "title": "NodeJS",
             "sections": [
                 {
                     "title": "Node JS",
-                    "text": "some text"
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+                                "Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. ",
+                                "Consequently, Node.js represents a \"JavaScript everywhere\" paradigm, unifying web-application development around a single programming language, rather than different languages for server-side and client-side scripts."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": ["Usage:"]
+                        },
+                        {
+                            "type": "code",
+                            "values": ["node [script.js]"]
+                        }
+                    ]
                 }
             ]
         },
@@ -48,7 +217,86 @@
             "sections": [
                 {
                     "title": "Node package manager",
-                    "text": "some text"
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "npm is the world's largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "npm consists of three distinct components:"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "values": [
+                                "the website",
+                                "the Command Line Interface (CLI)",
+                                "the registry"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "Use the website to discover packages, set up profiles, and manage other aspects of your npm experience. For example, you can set up organizations to manage access to public or private packages.",
+                                "The CLI runs from a terminal, and is how most developers interact with npm.",
+                                "The registry is a large public database of JavaScript software and the meta-information surrounding it."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "package.json File",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "This document is all you need to know about what's required in your package.json file. It must be actual JSON, not just a JavaScript object literal."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "Basic layout of the document:"
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [
+                                "Basic layout of the document:"
+                            ]
+                        },
+                        {
+                            "type": "code",
+                            "values": [
+                                "{",
+                                "   \"dependencies\": {",
+                                "",
+                                "   },",
+                                "   \"scripts\": {",
+                                "",
+                                "   }",
+                                "}"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "title": "Usage",
+                    "parts": [
+                        {
+                            "type": "code",
+                            "values": [
+                                "npm install        install all the dependencies in your project",
+                                "npm install <foo>  add the <foo> dependency to your project",
+                                "npm run <foo>      run the script named <foo>",
+                                "npm <command> -h   quick help on <command>"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -56,11 +304,63 @@
             "title": "Express",
             "sections": [
                 {
-                    "title": "Express",
-                    "text": "some text"
+                    "title": "Overview",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. "
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "values": [ "How to install:" ]
+                        },
+                        {
+                            "type": "code",
+                            "values": ["$ npm install express --save"]
+                        }
+                    ]
+                },
+                {
+                    "title": "How to setup a simple server",
+                    "parts": [
+                        {
+                            "type": "code",
+                            "values": [
+                                "const express = require(\"express\"); // Import express",
+                                "const app = express(); // Initialize the express app",
+                                "",
+                                "// Define endpoints:",
+                                "app.get(\"/\", (req, res) => {",
+                                "   res.send({ mindIsBlown: true });",
+                                "});",
+                                "",
+                                "// Start listening on port 8080",
+                                "app.listen(port, () => {",
+                                "   console.log(\"App listening at http://localhost:8080\");",
+                                "});"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "REST",
+            "sections": [
+                {
+                    "title": "Representational state transfer (REST)",
+                    "parts": [
+                        {
+                            "type": "text",
+                            "values": [
+                                "Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web. REST defines a set of constraints for how the architecture of an Internet-scale distributed hypermedia system, such as the Web, should behave. The REST architectural style emphasises the scalability of interactions between components, uniform interfaces, independent deployment of components, and the creation of a layered architecture to facilitate caching components to reduce user-perceived latency, enforce security, and encapsulate legacy systems."
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ]
 }
-
