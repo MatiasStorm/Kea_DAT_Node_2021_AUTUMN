@@ -7,7 +7,7 @@
 </script>
 
 
-<div class="flex flex-col flex-grow h-full p-3 bg-gray-900">
+<div class="flex flex-col h-full p-3 bg-gray-900">
     <h1 class="mb-3 text-xl text-white">Documentation</h1>
     {#if titles.length > 0}
         {#each titles as title}

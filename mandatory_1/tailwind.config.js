@@ -4,9 +4,17 @@ const prod = mode === 'production';
 module.exports = {
     purge: { 
         content: [
-            './client/**/*.svelte'
+            './client/**/*.svelte',
+            './client/**/*.js'
         ],
-        enable: prod
+        enable: prod,
+        options: {
+            defaultExtractor: content => [ 
+                // Disable purgin of svelte 'class:' directive
+                ...(content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []),
+                ...(content.match(/(?<=class:)[^=>\/\s]*/g) || []),
+            ]
+        }
     },
     darkMode: false, // or 'media' or 'class'
     theme: {

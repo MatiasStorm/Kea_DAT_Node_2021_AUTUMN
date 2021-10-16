@@ -23,15 +23,15 @@
 
 </script>
 
-<div class="flex w-screen h-screen">
-    <div class="w-72">
+<div class="flex min-h-screen max-w-screen ">
+    <div class="flex-none w-72">
         <SideBar 
             on:activeTitleChange={onTitleChange} 
             titles={titles} 
             activeTitle={activeTitle}
         />
     </div>
-    <div class="w-full">
+    <div class="flex-auto">
         <DocumentationView sections={sections} />
     </div>
 </div>
