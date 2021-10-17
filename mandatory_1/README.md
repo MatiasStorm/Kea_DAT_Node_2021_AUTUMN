@@ -2,6 +2,26 @@
 
 Assignment description: https://docs.google.com/document/d/19mRMDNkjseSXMIeokX3o5gX8qydNSdviPqLu1jWVI-4/edit
 
+# Run
+
+Install node modules:
+```
+npm install
+```
+
+Build the svelte bundles:
+```
+npm run build
+```
+
+Run the express server:
+```
+npm start
+```
+
+Now navigate to [http://localhost:3000](http://localhost:3000)
+
+
 
 ## Requirements
 
