@@ -37,9 +37,9 @@ function initializeApiEndpoints(app, db){
 
 // Compiled frontend (Has to be last)
 function startServer(app, port){
-    app.use(express.static('public'));
+    app.use(express.static(path.join(__dirname,'/../public')));
     app.get("*", (req, res) => {
-        res.sendFile(path.join(__dirname + "/public/build/bundle.js"));
+        res.sendFile(path.join(__dirname + "/../public/index.html"));
     })
 
     app.listen(port, () => {

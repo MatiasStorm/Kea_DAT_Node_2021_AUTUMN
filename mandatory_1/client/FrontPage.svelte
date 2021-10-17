@@ -1,38 +1,41 @@
 <script>
+    import {Router, Link, Route} from "svelte-routing";
     import SideBar from './SideBar.svelte';
     import DocumentationView from "./DocumentationView/DocumentationView.svelte";
+    export let url;
     let serverUrl = "http://localhost:3000/api";
-    let documentationPages = [];
-    let titles = [];
-    let activeTitle;
-    let sections = [];
+    const routes = [
+        "javascript",
+        "nodejs",
+        "npm",
+        "express",
+        "rest"
+    ];
 
-    fetch(`${serverUrl}/pages`)
-        .then(res => res.json())
-        .then(res => {
-            documentationPages = res;
-            titles = documentationPages.map(d => d.title);
-            activeTitle = documentationPages[0].title;
-            sections = documentationPages.find(d => d.title = activeTitle).sections
-        });
+    const promise = fetch(`${serverUrl}/pages`).then(res => res.json());
 
-    function onTitleChange(event){
-        activeTitle = event.detail.title
-        sections = documentationPages.find(d => d.title === activeTitle).sections
+    function getDocumentSectionsByRoute(documentationPages, route){
+        return documentationPages.find(d => d.title.toLowerCase() === route)?.sections;
     }
 
 </script>
 
 <div class="flex min-h-screen max-w-screen ">
-    <div class="flex-none w-72">
-        <SideBar 
-            on:activeTitleChange={onTitleChange} 
-            titles={titles} 
-            activeTitle={activeTitle}
-        />
-    </div>
-    <div class="flex-auto">
-        <DocumentationView sections={sections} />
-    </div>
+    <Router url="{url}">
+        <div class="flex-none w-72">
+            <SideBar 
+                routes={routes} 
+            />
+        </div>
+        {#await promise then data}
+            <div class="flex-auto">
+                {#each routes as route}
+                    <Route path="{route}">
+                        <DocumentationView sections={getDocumentSectionsByRoute(data, route)} />
+                    </Route>
+                {/each}
+            </div>
+        {/await}
+    </Router>
 </div>
 
