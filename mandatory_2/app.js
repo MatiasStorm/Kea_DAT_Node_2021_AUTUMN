@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
 
@@ -11,6 +14,11 @@ const projectsRouter = require("./routers/projects.js");
 const pagesRouter = require("./routers/pages.js")
 const contactRouter = require("./routers/contact.js");
 const adminRouter = require("./routers/admin.js");
+
+/* Middleware */
+const middleware = require("./middleware");
+
+app.use(cookieParser());
 
 app.use(projectsRouter.router);
 app.use(pagesRouter.router);
@@ -46,7 +54,8 @@ app.get("/contact", (req, res) => {
     res.send(contactPage);
 });
 
-app.get("/admin/dashboard", (req, res) => {
+app.get("/admin/dashboard", middleware.authenticateToken, (req, res) => {
+    // assert login
     res.send(dashboard);
 })
 
