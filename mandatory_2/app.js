@@ -1,6 +1,9 @@
 require("dotenv").config();
 
-const cookieParser = require("cookie-parser");
+// Database
+const {sequelize} = require("./database/connectSqlite.js");
+
+
 const express = require("express");
 const app = express();
 
@@ -14,16 +17,20 @@ const projectsRouter = require("./routers/projects.js");
 const pagesRouter = require("./routers/pages.js")
 const contactRouter = require("./routers/contact.js");
 const adminRouter = require("./routers/admin.js");
+const techonogiesRouter = require("./routers/technologies.js");
 
 /* Middleware */
 const middleware = require("./middleware");
 
+// Used to parse http only jwt cookie
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
-app.use(projectsRouter.router);
-app.use(pagesRouter.router);
-app.use(contactRouter.router);
-app.use(adminRouter.router);
+app.use(projectsRouter);
+app.use(pagesRouter);
+app.use(contactRouter);
+app.use(adminRouter);
+app.use(techonogiesRouter);
 
 const { createPage } = require("./render.js");
 const { urlencoded } = require("express");

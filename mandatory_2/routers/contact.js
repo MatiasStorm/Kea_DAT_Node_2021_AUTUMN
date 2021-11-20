@@ -6,6 +6,5 @@ router.post("/api/contact", (req, res) => {
     res.send();
 });
 
-module.exports = {
-    router
-};
+module.exports = router;
+
