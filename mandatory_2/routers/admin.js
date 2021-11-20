@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 
 router.post("/api/admin", (req, res) => {
     const body = req.body;
-    console.log(req);
     if(body.username == "admin" && body.password == "password"){
         const accessToken =  jwt.sign(body.username, process.env.ACCESS_TOKEN_SECRET);
         res.cookie("auth", "Baerer " + accessToken, {
