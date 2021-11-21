@@ -25,7 +25,7 @@ router.get("/api/projects/:id", async (req, res) => {
     res.json(projects);
 });
 
-router.post("/api/projects", async (req, res) => {
+router.post("/api/projects", middleware.authenticateToken, async (req, res) => {
     let project = await Project.create(req.body)
 
     project.dataValues.technologies = [];
@@ -43,7 +43,7 @@ router.post("/api/projects", async (req, res) => {
     res.json(project);
 });
 
-router.put("/api/projects/:id", async (req, res) => {
+router.put("/api/projects/:id", middleware.authenticateToken, async (req, res) => {
     const project = await Project.findOne({where: {id: req.params.id}, include: [ Technology ]});
 
     if(!project){
@@ -80,7 +80,7 @@ router.put("/api/projects/:id", async (req, res) => {
     res.json(project);
 });
 
-router.delete("/api/projects/:id", async (req, res) => {
+router.delete("/api/projects/:id", middleware.authenticateToken, async (req, res) => {
     await Project.destroy({
         where: {
             id: req.params.id
