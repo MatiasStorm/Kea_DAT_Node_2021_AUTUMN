@@ -1,6 +1,32 @@
 <h1>
     Dashboard - Admin
 </h1>
+
+<h3>
+    Create a new project
+</h3>
+<form onsubmit="return false">
+    <label for="">
+        Name:
+        <input id="name" type="text">
+    </label>
+
+    <label for="">
+        Category:
+        <input id="category" type="text" required>
+    </label>
+
+    <label for="">
+        Technologies:
+        <select id="technologies" multiple required>
+
+        </select>
+    </label>
+    
+    <button onclick="saveProject()" type="submit" required>
+        Save
+    </button>
+</form>
     
 <div id="projects-wrapper">
     
