@@ -14,17 +14,31 @@ Object.values(models).forEach(model => {
     }   
 })
 
-sequelize.sync({force: true});
+sequelize.sync({force: true}).then( () => {
+    models.Project.create({
+        "name": "Node Folie", 
+        "category": "Node.js", 
+    }).then( project => {
+        models.Technology.create({ name: "Javascript" })
+            .then(t => project.addTechnology(t));
+    }).then( () => {
+        models.Project.create({
+            "name": "Python project", 
+            "category": "Python", 
+        }).then( project => {
+            models.Technology.create({ name: "Python" })
+                .then(t => project.addTechnology(t));
+        });
+    }).then(() => {
+        models.User.create({
+            username: "admin",
+            password: "admin"
+        })
+    })
+} )
 
-// (async () => {
-//     try{
-//         await sequelize.authenticate();
-//         console.log("Successfully connected to database");
-//     }
-//     catch (error){
-//         console.error("Unable to connect to database");
-//     }
-// })();
+// test Data
+
 
 module.exports = {
     sequelize

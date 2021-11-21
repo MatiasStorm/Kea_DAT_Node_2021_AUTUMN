@@ -1,6 +1,6 @@
 fetch("/api/projects")
 .then(response => response.json())
-.then(({ projects }) => {
+.then(( projects ) => {
     const projectsWrapperDiv = document.getElementById("projects-wrapper");
 
     projects.map(project => { 
@@ -8,8 +8,7 @@ fetch("/api/projects")
         projectDiv.innerHTML = `
             <h3>${escapeHTML(project.name)}</h3>
             <p>Category: ${escapeHTML(project.category)}</p>
-            <p>Technologies: ${escapeHTML(project.technologies.join(", "))}</p>
-            <p>Links: ....</p>
+            <p>Technologies: ${escapeHTML(project.technologies.map(t => t.name).join(", "))}</p>
         `;
         
         projectsWrapperDiv.appendChild(projectDiv);

@@ -1,12 +1,21 @@
-
+const {User} = require("../models");
+const { Op } = require("sequelize");
 const router = require("express").Router();
 
 const jwt = require("jsonwebtoken");
 
-router.post("/api/admin", (req, res) => {
+router.post("/api/admin", async (req, res) => {
     const body = req.body;
-    if(body.username == "admin" && body.password == "password"){
-        const accessToken =  jwt.sign(body.username, process.env.ACCESS_TOKEN_SECRET);
+    const user = await User.findOne({
+        where: {
+            [Op.and]: [ 
+                { username: body.username },
+                { password: body.password } 
+            ]
+        }
+    });
+    if(user){
+        const accessToken =  jwt.sign(user.username, process.env.ACCESS_TOKEN_SECRET);
         res.cookie("auth", "Baerer " + accessToken, {
             httpOnly: true,
         })
