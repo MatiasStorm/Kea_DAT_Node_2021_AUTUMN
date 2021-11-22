@@ -12,6 +12,7 @@ function sendContactMessage() {
         if (response.status === 200) {
             console.log("Everything went well");
             // redirect after showing a notification
+            toastr.info("Din besked er send!");
         } else {
             console.log("Error sending the contact message", response.status);
         }
@@ -19,3 +20,4 @@ function sendContactMessage() {
 }
 
 document.getElementById("contact-button").addEventListener("click", sendContactMessage);
+
