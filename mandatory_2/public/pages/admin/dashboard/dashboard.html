@@ -2,7 +2,7 @@
     Dashboard - Admin
 </h1>
 
-<h3>
+<h3 id="title">
     Create a new project
 </h3>
 <form onsubmit="return false">
@@ -23,8 +23,12 @@
         </select>
     </label>
     
-    <button onclick="saveProject()" type="submit" required>
+    <button id="save-project-button" type="submit">
         Save
+    </button>
+
+    <button id="cancel-project-button">
+        Cancel
     </button>
 </form>
     

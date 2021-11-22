@@ -44,6 +44,7 @@ const projectsPage = createPage("projects/projects.html");
 const contactPage = createPage("contact/contact.html");
 const adminPage = createPage("admin/admin.html");
 const dashboard = createPage("admin/dashboard/dashboard.html");
+const editProject = createPage("admin/dashboard/editProject.html");
 
 app.get("/", (req, res) => {
     res.send(frontpagePage);
