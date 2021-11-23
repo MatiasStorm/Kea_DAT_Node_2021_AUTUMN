@@ -6,7 +6,7 @@ function sendContactMessage() {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
             phone: document.getElementById("phone").value,
-            name: document.getElementById("message").value,
+            message: document.getElementById("message").value,
         })  
     }).then(response => {
         if (response.status === 200) {
@@ -14,6 +14,7 @@ function sendContactMessage() {
             // redirect after showing a notification
             toastr.info("Din besked er send!");
         } else {
+            toastr.warning("Din besked blev desvære ikke sendt.");
             console.log("Error sending the contact message", response.status);
         }
     });
